@@ -20,7 +20,7 @@ install: gem install jekyll jekyll-feed minima
 script: bundle exec jekyll build
 after_success:
     - mkdir blog
-    - mv * blog
+    - mv _site/* blog
     - tar -czf blog.tgz blog
     - export SSHPASS=$DEPLOY_PASS
     - sshpass -e scp -o StrictHostKeyChecking=no blog.tgz $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH
