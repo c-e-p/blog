@@ -16,7 +16,7 @@ addons:
 language: ruby
 rvm:
  - 2.3.3
-install: gem install jekyll html-proofer jekyll-feed
+install: gem install jekyll html-proofer jekyll-feed minima
 script: bundle exec jekyll build && htmlproofer ./_site
 after_success:
     - mkdir blog
