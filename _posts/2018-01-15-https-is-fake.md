@@ -2,7 +2,7 @@
 layout: post
 title:  "HTTPS is Fake, and Other Tales"
 date:   2018-01-15 12:00:00 -0500
-categories: infosec https https-everywhere chrome ux
+categories: infosec
 ---
 
 HTTPS: it's fake.
