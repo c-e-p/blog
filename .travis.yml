@@ -16,7 +16,7 @@ addons:
 language: ruby
 rvm:
  - 2.3.3
-install: gem install jekyll html-proofer public_suffix-2.0.5 
+install: gem install jekyll html-proofer public_suffix "2.0.5"
 script: jekyll build && htmlproofer ./_site
 after_success:
     - mkdir blog
