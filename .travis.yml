@@ -16,7 +16,7 @@ addons:
 language: ruby
 rvm:
  - 2.3.3
-install: gem install jekyll jekyll-feed minima
+install: gem install jekyll jekyll-feed minima public-suffix
 script: bundle exec jekyll build
 after_success:
     - mkdir blog
