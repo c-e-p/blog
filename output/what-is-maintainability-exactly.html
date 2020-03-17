@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>What Is Maintainability, Exactly?</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Making Pies</a></h1>
+                <nav><ul>
+                    <li><a href="/category/food.html">food</a></li>
+                    <li><a href="/category/music.html">music</a></li>
+                    <li class="active"><a href="/category/software.html">software</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/what-is-maintainability-exactly.html" rel="bookmark"
+           title="Permalink to What Is Maintainability, Exactly?">What Is Maintainability, Exactly?</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2017-05-08T19:13:26-05:00">
+                Published: Mon 08 May 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/elena.html">Elena</a>
+        </address>
+<p>In <a href="/category/software.html">software</a>.</p>
+
+</footer><!-- /.post-info -->      <p>I like to say that I care deeply about maintainable code, which is true, but then I am often asked what counts as maintainable code. How dare you ask me to explain, interviewer/coworker/random guy who overheard me yelling at happy hour! But it's a fair enough question: don't spout dogma unless you can back it up with real opinions. My own opinions have largely been formed through maintaining some very specific, painful examples.</p>
+<ol>
+<li>
+<p>One of the things that I think developers don't like admitting is that a huge proportion of dev jobs, even at tech companies, privilege delivery over best practice. That can lead to getting to do really interesting things that are, objectively, alarmingly hack-ish. Or it can lead to what I call: "DRY, more like hahaha WET, with my tears!" So a core tenet of maintainability, for me, is acknowledging that you're likely to not have even as much time as you initially thought, much less what you'd have in an ideal world. You will cut corners. It's not a question of if, to steal from my pentester coworkers, but when. So decide early on what corners you're willing to cut vs what requirements are absolutely non-negotiable.</p>
+</li>
+<li>
+<p>One of those non-negotiable requirements should be sufficient focus on the sad + bad paths. ("Hey, this is a lot of negativity." Yeah, I'm real fun in meetings!) Happy path testing isn't unimportant, but it'll happen anyway, even if it's just user testing at the very end. You are building an application to accomplish certain goals; barring serious organizational mess, at some point someone will probably check to make sure it rolls over the lowest bar of "does x, y, and z(1). But things go badly, even with the most carefully, stringently happy-path-tested application. I once maintained a web application written by a 4-years-gone contractor, a man who everyone assured me was absolutely brilliant and a very impressive programmer. He probably was; what he'd written certainly had potential to be a rock-solid part of a really complex workflow. Unfortunately, he literally ran out of time on his contract. The error handling in the app was mostly just try/catch/write to log/do nothing with the data that hadn't been moved or processed. Since this particular application dropped PDFs off at a certain point on the share drive, then picked them up from another location after processing, effectively ignoring errors led to a backed-up drive and a blowing up app in very short order.</p>
+</li>
+</ol>
+<p>I can't say what I would have done in his shoes. I'm still more junior than he was when he wrote it. But having worked with that app for a year, and being the only person in the 4 years since its installation to figure out how to successfully deploy it to prod, I do have a few suggestions: alert someone as your errors pile up, since you're logging them and sending emails anyway; do a sweep of old files and either delete them or archive them; use some corrupted data as part of your normal test process. All of these suggestions are based on my very painful memories of finding out that the app I was supposed to be maintaining had been failing in prod for months without any of the business line knowing. They're pretty basic stuff. But it didn't seem to have occurred to anyone on the original project that this stuff should have been non-negotiable. Eventually, whether it's in a day or a decade, your app will fail. MVP should include that assumption and handle it appropriately.</p>
+<ol>
+<li>
+<p>A great way to learn what makes code maintainable is to try and maintain your own long-forgotten code. What 'long-forgotten' means for any individual developer varies, of course, but there's nothing like looking at your own code, seeing the IDE cheerily informing you that you wrote this function 410 days ago, and thinking, "What was I thinking?!" Commenting code can help with this, but I've even written comments that, with distance and unfamiliarity, become totally inscrutable. What's helped me untangle something I've forgotten are things like clear control flow - small classes, not jumping around files too much, grouping like functionality. Basic object oriented stuff, basically. But beyond that, common best practices for naming variables, functions, and classes are really important. There's nothing quite as dispiriting as debugging an application and going, "hm, what was dumbThing supposed to be doing again?" The ability to mentally reference the control flow of a program is hugely important in understanding it. And in my own relatively short career, I've had to do most of my debugging without the ability to directly test the application for years. The reasons for this varied - a key part of the app that clients only use isn't working in our internal setup, or the entire app has been down in dev for two years, or we don't have enough time to set up a good dev environment and we're small so [meme about testing in prod] - but one constant remained: you might not always get the luxury of debugging with an actual environment resembling prod. Plan accordingly!</p>
+</li>
+<li>
+<p>Honesty is the best policy even if you're not Abe Lincoln. Listen, I've been party to some truly incomprehensible business requirements. I was once working on a document processing application where we had to break our own math because the business line wanted to round a sum on a preliminary document, but not the final paperwork - and they wanted to round <em>down</em>, on each line item, even if it would make the final document look off by several dollars. Okay, sure, let me just break this elementary school math for you. What are computers for, if not to make mathematic tasks less precise? But, mocking aside, those were the requirements and we had to implement them. As a result, when I wrote the function to spit their wonky results out, I added an aside in the comments about why the math was so deliberately broken.</p>
+</li>
+</ol>
+<p>We all code workarounds. Requirements change, or they never made any sense to begin with; you run out of time; you have a problem that's just not worth solving the "good" way, at least not this iteration. I find it very helpful to indicate that I know what's about to follow is less than ideal, and to try and cite why it's that way. This kind of documentation serves two purposes: first, it stops the poor maintenance dev from scratching her head and trying to divine your murky motivations, and second, it prevents that same dev from "fixing" your code that was broken on purpose. </p>
+<p>The second part of honesty is more of a personal thing, but I've found it very helpful. A lot of code that's difficult or impossible to maintain gets that way because of a mismatch between expectation and ability, or time buckets and dev bandwidth. So be honest with your bosses, if you can. I've had guys set down deadlines without realizing their stable of 10 devs are exhausted and burned out, just because we haven't started throwing pint glasses yet. Or, I've had guys who think being close to hurling pint glasses is just a harbinger of greater creativity to come, rather than a sign that you're about to have a wave of resignations. Honesty! It's great, except when it's not. But it's a good thing to strive for.</p>
+<ol>
+<li>
+<p>Plan for obsolescence. Sometimes this means not baking a plugin that hasn't been updated in 5 years into your code. Sometimes it means being a pill and insisting that the new project use the newer minor version of .NET, because why start already behind the pack? Sometimes it means taking a big old step back and remembering what happened to all those Flash websites in the latter half of the 00s. This is a fuzzy suggestion, but it's one that I, again, feel very strongly about. One of the only predictable things about working in technology is that whatever you're doing will be outdated within your lifetime. Often, you can swap "a decade" for "your lifetime." But never, ever assume that what you're working on will be around in 10 years - or that you'll be around to fix it. Forget being hit by a bus, you could win the lottery! Now back away from the WinForms designer and we'll all get out alive.</p>
+</li>
+<li>
+<p>Dependency injection. DRY. Service-oriented architecture. Design patterns. Encapsulation. Unit tests. All of these are critical. But <a href="https://softwareengineering.stackexchange.com/questions/134855/what-characteristics-or-features-make-code-maintainable">many others</a> have covered that stuff, so you're doing it all already, right? Right.</p>
+</li>
+</ol>
+<p>-</p>
+<p>(1)Or you'll get tickets after it's released into the wild. Insert dead-eyed stare here.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://google.com/">JFGI</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://twitter.com/imperfectelena">Twitter</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

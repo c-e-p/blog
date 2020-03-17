@@ -1,9 +1,6 @@
----
-layout: post
-title:  "What Is Maintainability, Exactly?"
-date:   2017-05-08 19:13:26 -0500
-categories: software-engineering development maintainability
----
+Title:  What Is Maintainability, Exactly?
+Date:   2017-05-08 19:13:26 -0500
+Category: software
 
 I like to say that I care deeply about maintainable code, which is true, but then I am often asked what counts as maintainable code. How dare you ask me to explain, interviewer/coworker/random guy who overheard me yelling at happy hour! But it's a fair enough question: don't spout dogma unless you can back it up with real opinions. My own opinions have largely been formed through maintaining some very specific, painful examples.
 

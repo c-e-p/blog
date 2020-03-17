@@ -1,11 +1,6 @@
----
-layout: post
-title:  "Sad Sad Songs"
-date:   2016-10-25 15:00:00 -0500
-categories: music
----
-
-
+Title:  Sad Sad Songs
+Date:   2016-10-25 15:00:00 -0500
+Category: music
 
 Any time my girlfriend has to look through my carefully curated music library, she says, “why do you have so many sad songs!” And since it would only worry her to say “because nihilism clings to me like spiderwebs to a particularly bug-filled forest tree”, I tell her it’s because I’m from the South, which is more or less the same thing. Though trees, on average, are less likely to vote against their interests. Jokes!
 

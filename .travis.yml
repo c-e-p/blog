@@ -13,14 +13,10 @@ addons:
   apt:
     packages:
       - sshpass
-language: ruby
-rvm:
- - 2.3.3
-install: bundle update && bundle install
-script: bundle exec jekyll build
+language: python
 after_success:
     - mkdir blog
-    - mv _site/* blog
+    - mv output/* blog
     - tar -czf blog.tgz blog
     - export SSHPASS=$DEPLOY_PASS
     - sshpass -e scp -o StrictHostKeyChecking=no blog.tgz $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH

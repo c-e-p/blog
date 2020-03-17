@@ -1,9 +1,6 @@
----
-layout: post
-title:  "What Did Facebook Know, and When Did They Know It?"
-date:   2018-04-07 10:08:00 -0500
-categories: facebook infosec
----
+Title:  What Did Facebook Know, and When Did They Know It?
+Date:   2018-04-07 10:08:00 -0500
+Category: software
 
 Kidding. But also, not really, because the tl has been full of debate - yes, still - about whether or not the Facebook/Cambridge Analytica breach/hack/whoopsie-doodle is actually a breach, hack, or whoopsie-doodle. In the last 24 hours I've seen people insist that Facebook's data access was definitely a breach, definitely not a breach, clearly a hack, and just a "loophole" that Cambridge Analytica happened to exploit until it was closed for mysterious reasons that no one is admitting to, but which certainly don't indicate either a bug Facebook knew about and considered low priority, or a bug they allowed people to actively exploit because it benefited them.
 

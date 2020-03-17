@@ -1,9 +1,6 @@
----
-layout: post
-title:  "The Maintenance Bubble"
-date:   2018-06-14 10:12:00 -0500
-categories: ransomeware infosec
----
+Title:  The Maintenance Bubble
+Date:   2018-06-14 10:12:00 -0500
+Category: software
 
 Ransomware is a thoroughly buzz-word-ified problem. In my current position as "random dev at an infosec consulting company", I have been the recipient of some truly misguided marketing pitches that both presume I have purchasing power within my company, and presume I believe the salesperson when he tells me his company can protect completely against ransomware attacks. Sure, bro! But having come from an enterprise position, I get it. There's a web of paranoia that surrounds the concept of data loss, and ransomware makes that worse by being so malicious: DR drills might cover an earthquake, but who's to say ransomware wouldn't make the jump to the second location? Not me, and probably not my old job's sysadmins, either.
 

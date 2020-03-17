@@ -1,11 +1,6 @@
----
-layout: post
-title:  "Let Biscuits Be Biscuits"
-date:   2016-12-26 12:00:00 -0500
-categories: food
----
-
-
+Title:  Let Biscuits Be Biscuits
+Date:   2016-12-26 12:00:00 -0500
+Category: food
 
 Every time I go to make biscuits, which is fairly often because they’re one of my favorite foods, I wind up ranting to myself a bit about the current place biscuits hold in our cultural canon. If you Google (or DuckDuckGo, winkwink, we’re all going to be mass surveilled and then die) how to make biscuits, you’re very likely to find a member of the mostly male info-splain cooking sites telling you that the best biscuits are laminated, like pastry dough, and require butter no warmer than 1 unit above absolute zero, and if you’re trying to make them without a sacrifice to the GMO gods, well, that’s your mistake isn’t it? Those same sites will then give you no fewer than 6 recipes for Artisan Bread In The Time It Takes You To Smell A Fart.
 

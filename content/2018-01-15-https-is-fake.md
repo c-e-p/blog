@@ -1,9 +1,6 @@
----
-layout: post
-title:  "HTTPS is Fake, and Other Tales"
-date:   2018-01-15 12:00:00 -0500
-categories: infosec
----
+Title:  HTTPS is Fake, and Other Tales
+Date:   2018-01-15 12:00:00 -0500
+Category: software
 
 HTTPS: it's fake.
 
